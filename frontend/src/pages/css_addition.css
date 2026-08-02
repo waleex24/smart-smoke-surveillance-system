@@ -1,0 +1,87 @@
+/* ═══════════════════════════════════════════════════════════
+   StudentDashboard.css ke BILKUL NEECHE paste karo
+   Kuch delete mat karna — sirf yeh append karo
+═══════════════════════════════════════════════════════════ */
+
+/* ── Admin stat variants ── */
+.stat-admin-warn { border-color: rgba(245,197,24,0.35); background: rgba(245,197,24,0.06); }
+.stat-admin-esc  { border-color: rgba(255,124,0,0.35);  background: rgba(255,124,0,0.06);  }
+.stat-admin-crit { border-color: rgba(229,57,53,0.45);  background: rgba(229,57,53,0.08); box-shadow: 0 0 16px rgba(229,57,53,0.12); }
+
+.vht-stat-value.admin-warned   { color: #f5c518; font-size: 1rem; }
+.vht-stat-value.admin-escalated{ color: #ff7c00; font-size: 1rem; }
+.vht-stat-value.admin-critical { color: #e53935; font-size: 1rem; }
+
+/* ── Admin pill variants ── */
+.vht-admin-pill {
+  padding: 8px 16px; border-radius: 8px;
+  font-weight: 700; font-size: 0.85rem;
+  white-space: nowrap; align-self: center;
+}
+.vht-admin-pill.pill-warning  { background: rgba(245,197,24,0.18); color: #f5c518; border: 1px solid rgba(245,197,24,0.4); }
+.vht-admin-pill.pill-escalated{ background: rgba(255,124,0,0.18);  color: #ff7c00; border: 1px solid rgba(255,124,0,0.4);  }
+.vht-admin-pill.pill-critical { background: #e53935; color: #fff; box-shadow: 0 4px 12px rgba(229,57,53,0.35); }
+
+/* ── Email Notice Box ── */
+.vht-email-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-radius: 12px;
+  padding: 18px 22px;
+  flex-wrap: wrap;
+  border-left: 5px solid;
+}
+.vht-email-box.email-warning  { background: rgba(245,197,24,0.06); border-color: #f5c518; border: 1px solid rgba(245,197,24,0.25); border-left: 5px solid #f5c518; }
+.vht-email-box.email-escalated{ background: rgba(255,124,0,0.06);  border-color: #ff7c00; border: 1px solid rgba(255,124,0,0.25);  border-left: 5px solid #ff7c00; }
+.vht-email-box.email-critical { background: rgba(229,57,53,0.07);  border-color: #e53935; border: 1px solid rgba(229,57,53,0.3);   border-left: 5px solid #e53935; box-shadow: 0 0 20px rgba(229,57,53,0.1); }
+
+.vht-email-left {
+  display: flex; align-items: flex-start;
+  gap: 14px; flex: 1;
+}
+.vht-email-icon  { font-size: 1.8rem; flex-shrink: 0; margin-top: 2px; }
+.vht-email-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; color: #e9eef0; }
+.vht-email-desc  { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+.vht-email-desc strong { color: #ccc; }
+
+.vht-email-status {
+  margin-top: 8px; font-size: 0.85rem; font-weight: 600;
+  padding: 6px 12px; border-radius: 6px; display: inline-block;
+}
+.vht-email-status.sent    { background: rgba(67,160,71,0.15);  color: #66bb6a; border: 1px solid rgba(67,160,71,0.3);  }
+.vht-email-status.error   { background: rgba(229,57,53,0.12);  color: #ef5350; border: 1px solid rgba(229,57,53,0.3);  }
+.vht-email-status.sending { background: rgba(0,180,255,0.10);  color: #7dd3fc; border: 1px solid rgba(0,180,255,0.2);  }
+
+/* ── Email Buttons ── */
+.vht-email-btn {
+  padding: 11px 20px; border-radius: 10px; border: none;
+  font-weight: 800; font-size: 0.88rem; cursor: pointer;
+  white-space: nowrap; transition: all 0.2s ease; flex-shrink: 0;
+}
+.vht-email-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none !important; }
+
+.vht-email-btn.btn-warning {
+  background: linear-gradient(135deg, #f5c518, #d4a800);
+  color: #001018; box-shadow: 0 4px 14px rgba(245,197,24,0.3);
+}
+.vht-email-btn.btn-warning:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,197,24,0.5); }
+
+.vht-email-btn.btn-escalated {
+  background: linear-gradient(135deg, #ff7c00, #e06800);
+  color: #fff; box-shadow: 0 4px 14px rgba(255,124,0,0.3);
+}
+.vht-email-btn.btn-escalated:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,124,0,0.5); }
+
+.vht-email-btn.btn-critical {
+  background: linear-gradient(135deg, #e53935, #b71c1c);
+  color: #fff; box-shadow: 0 4px 14px rgba(229,57,53,0.35);
+}
+.vht-email-btn.btn-critical:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(229,57,53,0.55); }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .vht-email-box { flex-direction: column; align-items: flex-start; }
+  .vht-email-btn { width: 100%; text-align: center; }
+}

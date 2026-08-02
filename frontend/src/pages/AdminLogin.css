@@ -1,0 +1,138 @@
+/* 🌐 Login Page Styling */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: linear-gradient(135deg, #1f1f1f, #0b0b0b);
+  padding: 20px;
+}
+
+/* 🧱 Card */
+.login-card {
+  background: #1a1a1a;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.login-card:hover {
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+}
+
+/* ✨ Title */
+.login-title {
+  color: #00d4ff;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 🧩 Input Fields */
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: #0f0f0f;
+  color: #fff;
+  transition: border-color 0.3s ease;
+  height: 48px;
+  box-sizing: border-box;
+}
+
+.login-card input::placeholder {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.login-card input:focus {
+  border-color: #00d4ff !important;
+  outline: none;
+}
+
+/* 🚪 Login Button */
+.btn-login {
+  width: 100%;
+  font-size: 1rem;
+  padding: 12px;
+  margin-top: 15px;
+  background-color: #00d4ff !important;
+  color: #0b0b0b !important;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #00d4ff;
+  height: 48px;
+}
+
+.btn-login:hover {
+  background-color: #ff6f00 !important;
+  color: #fff !important;
+  box-shadow: 0 0 20px #ff6f00;
+}
+
+/* 📩 Message Feedback */
+.login-message {
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.login-message.success {
+  background-color: #00ff7f33;
+  color: #00ff7f;
+}
+
+.login-message.error {
+  background-color: #ff4d4d33;
+  color: #ff4d4d;
+}
+
+/* 🔗 Footer Links */
+.login-footer-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #e0e0e0;
+}
+
+.login-footer-left span,
+.login-footer-right span {
+  color: #00d4ff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.login-footer-left span:hover,
+.login-footer-right span:hover {
+  color: #ff6f00;
+}
+
+/* 🧩 Input Group */
+.input-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 5px;
+}

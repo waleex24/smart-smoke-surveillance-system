@@ -1,0 +1,210 @@
+/* Navbar General */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: linear-gradient(90deg, #0b0b0b, #1f1f1f);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo */
+.navbar-logo a {
+  color: #00d4ff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.navbar-logo a:hover {
+  color: #ff6f00;
+}
+
+/* Links */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navbar-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-links li a:hover {
+  color: #ff6f00;
+  transform: scale(1.1);
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: white;
+  border-radius: 8px;
+  min-width: 180px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 8px 0;
+  z-index: 100;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+/* Show dropdown */
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+}
+
+.dropdown-menu li a {
+  color: #333;
+  display: block;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f4f4f4;
+  color: #ff6f00;
+}
+/* ====================== */
+/* 📱 Mobile Responsive */
+/* ====================== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+  z-index: 110; /* keep above menu */
+}
+
+.bar {
+  width: 28px;
+  height: 3px;
+  background-color: #00d4ff;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🔥 Perfect Cross (X) Animation */
+.menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Menu */
+@media screen and (max-width: 767px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    padding: 1.2rem 0;
+    gap: 1rem;
+    text-align: center;
+    display: none;
+    transition: all 0.3s ease-in-out;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-links li a {
+    font-size: 1.1rem;
+  }
+
+  /* 💡 Fix Dropdown gap & alignment */
+  /* 💡 Fix Dropdown gap & hover spacing for mobile */
+@media screen and (max-width: 767px) {
+  .dropdown {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dropdown-menu {
+    position: absolute; /* ✅ stays on top — no layout shift */
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2a2a2a;
+    border-radius: 8px;
+    min-width: 180px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    padding: 8px 0;
+    z-index: 200;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  }
+
+  .dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+  }
+
+  .dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+  }
+
+  .dropdown-menu li a:hover {
+    background: #333;
+    color: #00d4ff;
+  }
+}
+
+}

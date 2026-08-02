@@ -1,0 +1,15 @@
+*env*/
+vape-env/
+smartsmoke-env311/
+venv/
+node_modules/
+*.dat
+*.dylib
+*.so
+.DS_Store
+*.pyc
+__pycache__/
+
+.env
+.env.*
+*.env

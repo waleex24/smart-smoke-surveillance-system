@@ -1,0 +1,354 @@
+/* ================================================================
+   appeals.css
+   Import karo: StudentDashboard.css ke neeche ya alag file
+   ================================================================ */
+
+/* ── Status Badges ── */
+.appeal-badge {
+  display: inline-flex; align-items: center;
+  padding: 3px 10px; border-radius: 20px;
+  font-size: 11px; font-weight: 700; white-space: nowrap;
+}
+.badge-pending  { background: rgba(0,180,255,0.12); color: #7dd3fc; border: 1px solid rgba(0,180,255,0.3);  }
+.badge-review   { background: rgba(245,197,24,0.12); color: #f5c518; border: 1px solid rgba(245,197,24,0.3); }
+.badge-approved { background: rgba(67,160,71,0.14);  color: #66bb6a; border: 1px solid rgba(67,160,71,0.35); }
+.badge-rejected { background: rgba(229,57,53,0.12);  color: #ef5350; border: 1px solid rgba(229,57,53,0.35); }
+
+/* ════════════════════════════════════════════════
+   STUDENT APPEAL SECTION
+════════════════════════════════════════════════ */
+.appeal-wrap { display: flex; flex-direction: column; gap: 20px; max-width: 900px; margin: 0 auto; }
+
+/* Top nav */
+.appeal-topnav { display: flex; gap: 10px; flex-wrap: wrap; }
+.appeal-nav-btn {
+  padding: 10px 20px; border-radius: 10px;
+  border: 1px solid rgba(0,212,255,0.2);
+  background: transparent; color: #cfeff6;
+  font-weight: 600; cursor: pointer; font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.appeal-nav-btn:hover  { border-color: rgba(0,212,255,0.4); color: var(--accent); }
+.appeal-nav-btn.active {
+  background: rgba(0,212,255,0.1);
+  color: var(--accent);
+  border-color: rgba(0,212,255,0.4);
+  box-shadow: 0 0 10px rgba(0,212,255,0.1) inset;
+}
+
+/* Subtabs */
+.appeal-subtabs { display: flex; gap: 8px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 10px; }
+.appeal-subtab {
+  background: none; border: none; color: var(--muted);
+  font-weight: 600; padding: 6px 14px; cursor: pointer;
+  border-radius: 6px; font-size: 0.9rem; transition: all 0.15s;
+}
+.appeal-subtab:hover  { color: #e9eef0; }
+.appeal-subtab.active { color: var(--accent); border-bottom: 2px solid var(--accent); border-radius: 0; }
+
+/* Empty / placeholder / error */
+.appeal-placeholder { color: var(--muted); padding: 20px 0; }
+.appeal-error       { color: #ff6b6b; padding: 10px 0; }
+.appeal-empty {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 10px; padding: 40px 20px; color: var(--muted); text-align: center;
+}
+.appeal-empty span { font-size: 2.5rem; }
+.appeal-cta {
+  margin-top: 6px; background: var(--accent); color: #001018;
+  border: none; padding: 10px 20px; border-radius: 8px;
+  font-weight: 700; cursor: pointer; transition: 0.2s;
+}
+.appeal-cta:hover { background: var(--accent-hover); color: #fff; }
+
+/* Appeal cards (student active) */
+.appeal-cards { display: flex; flex-direction: column; gap: 14px; }
+.appeal-card {
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px; padding: 18px 20px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.appeal-card-top { display: flex; justify-content: space-between; align-items: center; }
+.appeal-card-id  { font-size: 0.8rem; color: var(--muted); font-weight: 600; margin-bottom: 4px; }
+.appeal-meta-row {
+  display: flex; justify-content: space-between;
+  font-size: 0.85rem; padding: 4px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.aml { color: var(--muted); }
+.amv { color: #e9eef0; font-weight: 600; }
+.appeal-reason-preview p { font-size: 0.85rem; color: #aaa; margin-top: 4px; line-height: 1.5; }
+.appeal-track-btn {
+  background: rgba(0,212,255,0.08);
+  border: 1px solid rgba(0,212,255,0.25);
+  color: var(--accent); padding: 9px 16px;
+  border-radius: 8px; font-weight: 700;
+  cursor: pointer; font-size: 0.88rem; transition: 0.2s;
+  align-self: flex-start;
+}
+.appeal-track-btn:hover { background: rgba(0,212,255,0.15); }
+
+/* Resolved table */
+.appeal-resolved-table-wrap,
+.appeal-all-table-wrap { overflow-x: auto; }
+.appeal-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; color: #e9eef0; }
+.appeal-table th {
+  padding: 10px 10px; text-align: left; color: var(--accent);
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  white-space: nowrap;
+}
+.appeal-table td { padding: 10px 10px; border-bottom: 1px solid rgba(255,255,255,0.03); }
+.appeal-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+.appeal-comment-cell { max-width: 200px; font-size: 0.8rem; color: #aaa; }
+
+/* Submit form */
+.appeal-form-wrap { background: var(--panel); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 24px; }
+.appeal-form-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 6px; }
+.appeal-form-sub   { font-size: 0.88rem; color: var(--muted); margin-bottom: 20px; line-height: 1.5; }
+.appeal-form       { display: flex; flex-direction: column; gap: 16px; }
+.af-group          { display: flex; flex-direction: column; gap: 6px; }
+.af-group label    { font-size: 0.85rem; font-weight: 700; color: #ccc; }
+.af-hint           { font-size: 0.78rem; color: var(--muted); font-weight: 400; }
+.af-group input,
+.af-group select,
+.af-group textarea {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px; padding: 10px 14px;
+  color: #e9eef0; font-size: 0.9rem; width: 100%;
+  outline: none; transition: border 0.2s;
+  font-family: inherit;
+}
+.af-group input:focus,
+.af-group select:focus,
+.af-group textarea:focus { border-color: rgba(0,212,255,0.4); }
+.af-group select option   { background: #1a1a2e; }
+.af-charcount { font-size: 0.78rem; color: var(--muted); text-align: right; }
+.af-min       { color: #f5c518; }
+.af-actions   { display: flex; gap: 12px; justify-content: flex-end; flex-wrap: wrap; }
+.af-cancel {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: #ccc; padding: 10px 20px; border-radius: 8px;
+  font-weight: 600; cursor: pointer; transition: 0.15s;
+}
+.af-cancel:hover { background: rgba(255,255,255,0.1); }
+.af-submit {
+  background: linear-gradient(135deg, var(--accent), #009ec3);
+  color: #001018; padding: 10px 24px; border-radius: 8px;
+  border: none; font-weight: 800; cursor: pointer; transition: 0.2s;
+}
+.af-submit:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,212,255,0.35); }
+.af-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.af-submit.af-reject { background: linear-gradient(135deg, #e53935, #b71c1c); color: #fff; }
+
+.appeal-submit-msg {
+  padding: 10px 16px; border-radius: 8px;
+  font-size: 0.88rem; font-weight: 600; margin-bottom: 8px;
+}
+.appeal-submit-msg.success { background: rgba(67,160,71,0.12); color: #66bb6a; border: 1px solid rgba(67,160,71,0.3); }
+.appeal-submit-msg.error   { background: rgba(229,57,53,0.1);  color: #ef5350; border: 1px solid rgba(229,57,53,0.3); }
+
+/* Detail / tracking view */
+.appeal-detail-wrap { display: flex; flex-direction: column; gap: 20px; }
+.appeal-back-btn {
+  background: none; border: none; color: var(--accent);
+  cursor: pointer; font-weight: 600; font-size: 0.9rem;
+  padding: 0; transition: 0.15s; align-self: flex-start;
+}
+.appeal-back-btn:hover { opacity: 0.75; }
+.appeal-detail-title { font-size: 1.1rem; font-weight: 800; }
+
+/* Status tracker */
+.appeal-tracker { display: flex; align-items: center; gap: 0; margin: 8px 0; flex-wrap: wrap; gap: 8px; }
+.tracker-step { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.tracker-dot {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,0.06); border: 2px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; font-weight: 700; color: var(--muted);
+  transition: all 0.3s;
+}
+.tracker-step.done    .tracker-dot { background: rgba(67,160,71,0.2); border-color: #66bb6a; color: #66bb6a; }
+.tracker-step.current .tracker-dot { background: rgba(0,212,255,0.15); border-color: var(--accent); color: var(--accent); box-shadow: 0 0 12px rgba(0,212,255,0.3); }
+.tracker-label { font-size: 11px; color: var(--muted); text-align: center; }
+.tracker-step.done    .tracker-label { color: #66bb6a; }
+.tracker-step.current .tracker-label { color: var(--accent); font-weight: 700; }
+.tracker-line { flex: 1; height: 2px; background: rgba(255,255,255,0.06); min-width: 30px; transition: 0.3s; }
+.tracker-line.done { background: #66bb6a; }
+
+.appeal-decision {
+  padding: 14px 18px; border-radius: 10px; border-left: 4px solid; font-size: 0.9rem;
+}
+.appeal-decision.approved { background: rgba(67,160,71,0.1);  border-color: #66bb6a; color: #c8e6c9; }
+.appeal-decision.rejected { background: rgba(229,57,53,0.09); border-color: #ef5350; color: #ffcdd2; }
+
+.appeal-detail-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+}
+.adg-item { background: rgba(255,255,255,0.03); border-radius: 8px; padding: 12px 14px; }
+.adg-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.adg-value { font-weight: 700; font-size: 0.9rem; }
+
+.appeal-reason-box { background: rgba(255,255,255,0.03); border-radius: 8px; padding: 14px 16px; }
+.arb-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.appeal-reason-box p { font-size: 0.88rem; color: #ccc; line-height: 1.6; }
+
+.appeal-admin-comment { background: rgba(0,212,255,0.05); border: 1px solid rgba(0,212,255,0.15); border-radius: 8px; padding: 14px 16px; }
+.aac-label { font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; font-weight: 700; }
+.appeal-admin-comment p { font-size: 0.88rem; color: #ccc; line-height: 1.6; }
+
+.appeal-refresh-btn {
+  background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.2);
+  color: var(--accent); padding: 9px 16px; border-radius: 8px;
+  font-weight: 700; cursor: pointer; font-size: 0.85rem;
+  align-self: flex-start; transition: 0.2s;
+}
+.appeal-refresh-btn:hover { background: rgba(0,212,255,0.15); }
+
+/* ════════════════════════════════════════════════
+   ADMIN APPEAL SECTION
+════════════════════════════════════════════════ */
+.admin-appeal-wrap { display: flex; flex-direction: column; gap: 20px; }
+
+/* Tabs */
+.admin-appeal-tabs { display: flex; gap: 10px; flex-wrap: wrap; }
+.aat-btn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 18px; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: transparent; color: #cfeff6;
+  font-weight: 600; cursor: pointer; font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.aat-btn:hover  { border-color: rgba(0,212,255,0.3); color: var(--accent); }
+.aat-btn.active {
+  background: rgba(0,212,255,0.1); color: var(--accent);
+  border-color: rgba(0,212,255,0.4);
+  box-shadow: 0 0 10px rgba(0,212,255,0.08) inset;
+}
+.aat-count {
+  background: #e53935; color: #fff; border-radius: 10px;
+  padding: 1px 7px; font-size: 11px; font-weight: 800;
+}
+
+/* Admin appeal cards */
+.admin-appeal-cards { display: flex; flex-direction: column; gap: 16px; }
+.admin-appeal-card {
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px; padding: 18px 20px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.aac-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.aac-id  { font-size: 0.78rem; color: var(--muted); margin-bottom: 3px; }
+.aac-student { display: flex; flex-direction: column; gap: 2px; }
+.aac-email   { font-size: 0.8rem; color: var(--muted); }
+.aac-meta    { display: flex; flex-direction: column; gap: 4px; }
+.aac-meta-row {
+  display: flex; justify-content: space-between;
+  font-size: 0.85rem; padding: 4px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.aac-meta-row span:first-child { color: var(--muted); }
+.aac-meta-row span:last-child  { font-weight: 600; }
+.aac-reason-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; }
+.aac-reason p     { font-size: 0.85rem; color: #ccc; line-height: 1.5; }
+.aac-evidence {
+  font-size: 0.85rem; color: var(--accent); text-decoration: none; font-weight: 600;
+}
+.aac-review-btn {
+  background: linear-gradient(135deg, var(--accent), #009ec3);
+  color: #001018; border: none; padding: 10px 18px;
+  border-radius: 8px; font-weight: 800; cursor: pointer;
+  transition: 0.2s; align-self: flex-start;
+}
+.aac-review-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,212,255,0.3); }
+.aac-review-btn-sm {
+  background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3);
+  color: var(--accent); padding: 5px 12px; border-radius: 6px;
+  font-weight: 700; cursor: pointer; font-size: 0.8rem; white-space: nowrap;
+}
+.aac-done { font-size: 0.8rem; color: var(--muted); }
+
+/* Filter row */
+.appeal-filter-row {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap;
+}
+.appeal-filter-row label { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+.appeal-filter-row select {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px; padding: 7px 12px; color: #e9eef0; font-size: 0.85rem; outline: none;
+}
+
+/* Stats grid */
+.appeal-stats-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; flex-wrap: wrap;
+}
+.ast-card {
+  background: var(--panel); border-radius: 12px; padding: 20px;
+  text-align: center; border: 1px solid rgba(255,255,255,0.06);
+  transition: 0.2s;
+}
+.ast-card:hover { transform: translateY(-4px); box-shadow: 0 0 18px rgba(0,212,255,0.12); }
+.ast-icon  { font-size: 1.8rem; margin-bottom: 8px; }
+.ast-val   { font-size: 2rem; font-weight: 900; color: var(--accent); }
+.ast-label { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+.ast-pending  .ast-val { color: #7dd3fc; }
+.ast-approved .ast-val { color: #66bb6a; }
+.ast-rejected .ast-val { color: #ef5350; }
+.ast-rate     .ast-val { color: var(--accent-hover); }
+
+/* Review Modal */
+.appeal-modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
+  z-index: 9999; display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.appeal-modal {
+  background: #161616; border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px; padding: 28px; width: 100%; max-width: 560px;
+  max-height: 90vh; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.modal-header { display: flex; justify-content: space-between; align-items: center; }
+.modal-header h3 { font-size: 1.1rem; font-weight: 800; }
+.modal-close {
+  background: rgba(255,255,255,0.06); border: none; color: #ccc;
+  width: 30px; height: 30px; border-radius: 50%; cursor: pointer;
+  font-size: 14px; display: flex; align-items: center; justify-content: center;
+  transition: 0.15s;
+}
+.modal-close:hover { background: rgba(229,57,53,0.2); color: #ef5350; }
+.modal-student-info { font-size: 0.85rem; color: var(--muted); background: rgba(255,255,255,0.03); padding: 10px 14px; border-radius: 8px; }
+.modal-reason-label { font-size: 11px; color: var(--muted); text-transform: uppercase; margin-bottom: 6px; }
+.modal-reason p     { font-size: 0.88rem; color: #ccc; line-height: 1.5; }
+.modal-form         { display: flex; flex-direction: column; gap: 14px; }
+
+.decision-toggle { display: flex; gap: 10px; }
+.dt-btn {
+  flex: 1; padding: 10px; border-radius: 8px; border: 2px solid transparent;
+  font-weight: 700; cursor: pointer; font-size: 0.9rem; transition: 0.2s;
+  background: rgba(255,255,255,0.04);
+}
+.dt-approve { color: #66bb6a; border-color: rgba(67,160,71,0.2); }
+.dt-approve.selected { background: rgba(67,160,71,0.15); border-color: #66bb6a; }
+.dt-reject  { color: #ef5350; border-color: rgba(229,57,53,0.2); }
+.dt-reject.selected  { background: rgba(229,57,53,0.15); border-color: #ef5350; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .appeal-stats-grid     { grid-template-columns: repeat(3, 1fr); }
+  .appeal-detail-grid    { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .appeal-topnav         { flex-direction: column; }
+  .appeal-stats-grid     { grid-template-columns: repeat(2, 1fr); }
+  .appeal-detail-grid    { grid-template-columns: 1fr; }
+  .admin-appeal-tabs     { flex-direction: column; }
+  .af-actions            { flex-direction: column; }
+  .af-submit, .af-cancel { width: 100%; text-align: center; }
+  .decision-toggle       { flex-direction: column; }
+}

@@ -1,0 +1,228 @@
+/* 🌍 General resets */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+/* 🎯 Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 10%;
+  background: linear-gradient(135deg, #1f1f1f, #0b0b0b);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #00d4ff;
+  text-shadow: 0 0 10px #00d4ff;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 1rem 0 2rem;
+  color: #e0e0e0;
+}
+
+/* 🚀 Hero Buttons */
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary {
+  padding: 12px 2rem;
+  margin-right: 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🎨 Button Styles */
+.btn-primary {
+  background: #00d4ff;
+  color: #0b0b0b;
+  box-shadow: 0 0 10px #00d4ff;
+}
+
+.btn-primary:hover {
+  background: #ff6f00;
+  color: #fff;
+  box-shadow: 0 0 20px #ff6f00;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #00d4ff;
+  color: #00d4ff;
+}
+
+.btn-secondary:hover {
+  background: #00d4ff;
+  color: #0b0b0b;
+}
+
+/* 🖼️ Hero Image */
+.hero-image img {
+  width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #00d4ff;
+}
+
+/* 💡 Features Section */
+.features-section {
+  padding: 5rem 10%;
+  background: #0b0b0b;
+  text-align: center;
+}
+
+.features-section h2 {
+  font-size: 2.5rem;
+  color: #00d4ff;
+  margin-bottom: 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px #ff6f00;
+  color: #ff6f00;
+}
+
+.feature-card i {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #00d4ff;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ──────────────────────────────── */
+/* 📱 Responsive Media Queries */
+/* ──────────────────────────────── */
+
+/* Very Small Devices (≤300px) */
+@media (max-width: 300px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .hero-image img {
+    width: 180px;
+    margin-top: 1rem;
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    padding: 8px 1rem;
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
+  }
+}
+
+/* Mobile Devices (≤767px) */
+@media (max-width: 767px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 5%;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-image img {
+    width: 300px;
+    margin-top: 2rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features-section h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Tablets (≤1024px) */
+@media (max-width: 1040px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 8%;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-image img {
+    width: 400px;
+    margin-top: 2rem;
+  }
+
+  .features-section {
+    padding: 4rem 8%;
+  }
+}
+
+/* Extra small devices (≤420px) */
+@media (max-width: 420px) {
+  .hero-image img {
+    width: 250px;       /* Shrink image for tiny screens */
+    margin-top: 1rem;   /* Maintain spacing */
+  }
+
+  .hero-content h1 {
+    font-size: 1.6rem;  /* Slightly smaller heading */
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;  /* Adjust paragraph text */
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    padding: 6px 1rem;   /* Buttons shrink too */
+    font-size: 0.75rem;
+    margin: 0.5rem 0;
+  }
+}

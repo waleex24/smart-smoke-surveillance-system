@@ -1,0 +1,155 @@
+/* 🌐 Signup Page Styling */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: linear-gradient(135deg, #1f1f1f, #0b0b0b);
+  padding: 20px;
+}
+
+/* 🧱 Card */
+.signup-card {
+  background: #1a1a1a;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+}
+
+/* ✨ Title */
+.signup-title {
+  color: #00d4ff;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* 🧩 Input Fields */
+.signup-card input {
+  width: 100%;
+  padding: 12px;              /* same as button */
+  margin: 10px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 1rem;            /* same as button */
+  background: #0f0f0f;
+  color: #fff;
+  height: 48px;               /* 🔥 fixed height */
+  box-sizing: border-box;
+}
+
+.signup-card input::placeholder {
+  color: #ccc;
+  font-size: 1rem;            /* aligned */
+}
+
+.signup-card input:focus {
+  border-color: #00d4ff !important;
+  box-shadow: 0 0 6px #00d4ff;
+  outline: none;
+}
+
+/* 🚀 Signup Button */
+.btn-signup {
+  width: 100%;
+  font-size: 1rem;            /* same as input */
+  padding: 12px;              /* same as input */
+  margin-top: 15px;
+  background-color: #00d4ff;
+  color: #0b0b0b;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #00d4ff;
+  height: 48px;               /* 🔥 same height */
+}
+
+.btn-signup:hover {
+  background-color: #ff6f00;
+  color: #fff;
+  box-shadow: 0 0 20px #ff6f00;
+}
+
+/* 📩 Message Feedback */
+.signup-message {
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.signup-message.success {
+  background-color: #00ff7f33;
+  color: #00ff7f;
+}
+
+.signup-message.error {
+  background-color: #ff4d4d33;
+  color: #ff4d4d;
+}
+
+/* 🔗 Footer */
+.signup-footer {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #e0e0e0;
+}
+
+.signup-footer span {
+  color: #00d4ff;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.signup-footer span:hover {
+  color: #ff6f00;
+}
+
+/* 🔒 Password */
+.password-field {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+}
+
+.password-strength {
+  margin-top: 6px;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+.password-strength.weak {
+  color: #e74c3c;
+}
+
+.password-strength.medium {
+  color: #f1c40f;
+}
+
+.password-strength.strong {
+  color: #2ecc71;
+}
+/* ⚠️ Field-level Errors */
+.field-error {
+  color: #ff4d4d;
+  font-size: 0.85rem;
+  text-align: left;
+  margin-top: -6px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
